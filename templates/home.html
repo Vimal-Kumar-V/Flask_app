@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this my home</title>
+    <link rel="stylesheet" href={{url_for('static',filename='css/main.css')}}>
+</head>
+<body>
+<center><h1>Task List</h1>
+<table>
+    <tr>
+        <th>
+            <b>ID</b>
+        </th>
+        <th>
+            <b>TASK_NAME</b>
+        </th>
+        <th>
+            <b>DATE_OF_CREATION</b>
+        </th>
+        <th>
+            <b>DATE_OF_COMPLETION</b>
+        </th>
+        <th>
+            <b>
+                COMPLETED
+            </b>
+        </th>
+        <th>
+            ACTION
+        </th>
+    </tr>
+        {% for task in tasks %}
+        <tr>
+        <td>{{ task.task_id }}</td>
+        <td>{{ task.task_name }}</td>
+        <td>{{ task.date_of_creation }}</td>
+        <td>{{ task.date_of_completion }}</td>
+        <td>{{ task.completed }}</td>
+
+        <td>
+            <a href="/update/{{ task.task_id }} ">Update</a></br>
+            <a href="/delete/{{ task.task_id }}">Delete</a>
+        </td>
+        </tr>
+    {% endfor %}
+
+</table></center>
+<a href="/search" class="button"><h4 style="text-align:center;">Search in the table </h4></a>
+<form action="/" method="post"  style="margin:100x">
+    <b>Enter the task id</b><input type="text" placeholder="task_id" name="task_id" id="task_id"></br>
+    <b>Enter name of task</b><input type="text" placeholder="Enter the task" name="content" id="content" ></br>
+    <b>Enter the date of creation</b><input type="date" placeholder="Enter creation date" name="created" id="created"></br>
+    <b>Enter the expected date of completion</b><input type="date" placeholder="Enter completion date" name="completed" id="completed"></br>
+    <b>Whether project is completed or not</b><input type="radio" id="Yes" name="status" value="Yes"><label for="Yes">Yes</label>
+   <input type="radio" id="No" name="status" value="No"><label for="No">No</label></br>
+    <input type="submit" value="add data">
+</form>
+
+</body>
+</html>

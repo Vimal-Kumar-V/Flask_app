@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href={{url_for('static',filename='css/main.css')}}>
+</head>
+<body>
+<form action="/update/{{ task.task_id}}" method="post" >
+
+    <b>Enter the task id</b><input type="text" name="task_id" id="task_id" value={{ task.task_id }}></br>
+    <b>Enter name of task</b><input type="text" placeholder="Enter the task" name="content" id="content" value={{ task.task_name }}></br>
+    <b>Enter the date of creation</b><input type="date" placeholder="Enter creation date" name="created" id="created" value={{ task.date_of_creation }}></br>
+    <b>Enter the expected date of completion</b><input type="date" placeholder="Enter completion date" name="completed" id="completed" value={{ task.date_of_completion }}></br>
+    <b>Whether project is completed or not</b><input type="radio" id="Yes" name="status" value="Yes"><label for="Yes">Yes</label>
+   <input type="radio" id="No" name="status" value="No"><label for="No">No</label></br>
+    <input type="submit" value="add data">
+</form>
+</body>
+</html>

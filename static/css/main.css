@@ -1,0 +1,26 @@
+body{
+font-family: sans_serif;
+color:white;
+background:black;
+}
+b{
+display:flex;
+}
+th{
+margin:10px 10px 10px 10px;
+padding:10px 10px 10px 10px;
+}
+td{
+margin:10px 10px 10px 10px;
+padding:10px 10px 10px 10px;
+}
+table,th,td{
+border:1px solid black;
+}
+form
+{
+margin:10px 0px 0px 0px;
+}
+a{
+color:white;
+decoration:None;}

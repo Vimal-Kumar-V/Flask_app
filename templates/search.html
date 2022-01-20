@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching in TAble</title>
+        <link rel="stylesheet" href={{url_for('static',filename='css/main.css')}}>
+
+</head>
+
+<body>
+<h3>Click the attribute to search</h3>
+<form action="/search" method="post" style="margin:10px 500px 0px 0px;">
+    <input type="radio" id="id" name="searchby" value="task_id"><label for="id">task_id</label></br>
+    <input type="radio" id="task" name="searchby" value="task_name"><label for="task">task_name</label></br>
+    <input type="radio" id="date_of_creation" name="searchby" value="date_of_creation"><label for="date_of_creation">Date_of_Completion</label></br>
+    <input type="radio" id="date_of_completion" name="searchby" value="date_of_completion"><label for="date_of_completion">Date_of_Creation</label></br>
+    <input type="radio" id="completed" name="searchby" value="completed"><label for="id">completed</label></br>
+    </br>
+    </br>
+   <b>Enter the attribute value</b> <input type="text" placeholder="Enter the Value" name="search"></input>
+    <input type="submit" value="search">
+</form>
+</body>
+</html>

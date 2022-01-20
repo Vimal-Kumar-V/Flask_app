@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searching in TAble</title>
+        <link rel="stylesheet" href={{url_for('static',filename='css/main.css')}}>
+
+</head>
+
+<body>
+<table>
+    <tr>
+        <th>
+            <b>ID</b>
+        </th>
+        <th>
+            <b>TASK_NAME</b>
+        </th>
+        <th>
+            <b>DATE_OF_CREATION</b>
+        </th>
+        <th>
+            <b>DATE_OF_COMPLETION</b>
+        </th>
+        <th>
+            <b>
+                COMPLETED
+            </b>
+        </th>
+
+    </tr>
+        {% for task in match %}
+        <tr>
+        <td>{{ task.task_id }}</td>
+        <td>{{ task.task_name }}</td>
+        <td>{{ task.date_of_creation }}</td>
+        <td>{{ task.date_of_completion }}</td>
+        <td>{{ task.completed }}</td>
+        </tr>
+    {% endfor %}
+</body>
+</html>
